@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 500" width="1050" height="500">
+
+<line x1="100" y1="75" x2="100" y2="400" stroke="blue"/>
+<line x1="100" y1="400" x2="1000" y2="400" stroke="blue"/>
+
+
+<text x="20" y="30">Life Expectancy in Canada, Mexico, and the United States from 1960-2020</text>
+<g class="line1">
+{% for point in Can_line_endpoints %}
+    <line x1="{{100+loop.index0*(900/60)}}" y1="{{400-(point[0]-55)*(325/40)}}" x2="{{100+(loop.index0+1)*(900/60)}}" y2="{{400-((point[1]-55)*(325/40))}}" class="line" stroke="green"/>
+ 
+{% endfor %}
+</g>
+
+<g class="line2">
+{% for point in Us_line_endpoints %}
+    <line x1="{{100+loop.index0*(900/60)}}" y1="{{400-(point[0]-55)*(325/40)}}" x2="{{100+(loop.index0+1)*(900/60)}}" y2="{{400-((point[1]-55)*(325/40))}}" class="line" stroke="blue"/>
+ 
+{% endfor %}
+</g>
+
+<g class="line3">
+{% for point in Mex_line_endpoints %}
+    <line x1="{{100+loop.index0*(900/60)}}" y1="{{400-(point[0]-55)*(325/40)}}" x2="{{100+(loop.index0+1)*(900/60)}}" y2="{{400-((point[1]-55)*(325/40))}}" class="line" stroke="red"/>
+ 
+{% endfor %}
+</g>
+
+<g class="line4">
+<line x1="100" y1="{{400-(mean-55)*(325/40)}}" x2="1000" y2="{{400-(mean-55)*(325/40)}}" stroke="black"/>
+</g>
+
+
+{% for year in label_years %}
+    <text class="label" x="{{100+(loop.index0)*70}}" y="425">{{year}}</text>
+{% endfor %}
+
+{% for i in range(9) %}
+    <text class="label" x="75" y="{{400-(loop.index0*(325/8))}}">{{55+loop.index0*5}}</text>
+{% endfor %}
+
+
+<text x="830" y="280">Overall Mean</text>
+
+
+<text x="100" y="150" transform="rotate(90,100,100)">Expected Age of Death (years)</text>
+
+
+<text x="500" y="450">Year</text>
+
+
+<text x="125" y="250">Canada</text>
+<text x="125" y="300">United States</text>
+<text x="125" y="369">Mexico</text>
+
+
+
+
+</svg>

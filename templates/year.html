@@ -1,0 +1,22 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <title>Map Data - {{year}}</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Life Expectancy Lab - Maya Inal</h1>
+  <h2>Map Data - {{year}}</h2>
+
+  <div id="north_america">
+    {% include 'north_america.svg' %}
+  </div>
+
+  <p>Overall, Canada has the highest life expectancy followed by the United States, with Mexico below.</p>
+
+  <footer>
+    All data from <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MX-US-CA"> The World Bank</a>.
+  </footer>
+</body>
+</html>
